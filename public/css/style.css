@@ -1,0 +1,151 @@
+/* ----------------------------------- Master Page ----------------------------------- */
+body{
+    background-color: #FFFAFA;
+}
+
+footer{
+    background-color: #79BEEE;
+    display: block;
+    position: sticky;
+    color: #fff;
+    font-weight: 600;
+}
+
+.navbar{
+    background-color: #79BEEE;
+    
+
+}
+.navbar .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+    color: #fff;
+}
+
+
+/* ----------------------------------- Home Page ----------------------------------- */
+.home-section{
+    margin-top: 50px;
+}
+
+.home-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.home-section .container-fluid .row {
+    margin-top: 50px;
+}
+
+.home-section .container-fluid .row .col-4{
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* ----------------------------------- Detail Page ----------------------------------- */
+.detail-section{
+    margin-top: 50px;
+}
+
+.detail-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.detail-section .container-fluid .col-4{
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-section .container-fluid .col-8{
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-section .container-fluid .col-8 .row .btn{
+    margin-top: 25px;
+}
+
+/* ----------------------------------- Login Page ----------------------------------- */
+.login-section{
+    margin-top: 50px;
+}
+
+.login-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.login-section .container-fluid .col-12{
+    justify-content: center;
+    align-items: center;
+    padding: 0 200px 100px 200px;
+}
+
+.login-section .container-fluid .col-12 form{
+    padding: 10px 100px 10px 100px;
+}
+
+.login-section .container-fluid .col-12 form .btn{
+    margin: 0px 0px 0px 90px;
+}
+
+/* ----------------------------------- Register Page ----------------------------------- */
+.register-section{
+    margin-top: 50px;
+}
+
+.register-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.register-section .container-fluid .col-12{
+    justify-content: center;
+    align-items: center;
+    padding: 0 200px 100px 200px;
+}
+
+.register-section .container-fluid .col-12 form{
+    padding: 10px 100px 10px 100px;
+}
+
+.register-section .container-fluid .col-12 form .btn{
+    margin: 0px 0px 0px 90px;
+}
+
+/* ----------------------------------- Home Page ----------------------------------- */
+.home-section{
+    margin-top: 50px;
+}
+
+.home-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.home-section .container-fluid .row {
+    margin-top: 50px;
+}
+
+.home-section .container-fluid .row .col-4{
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* ----------------------------------- Cart Page ----------------------------------- */
+.cart-section{
+    margin-top: 50px;
+}
+
+.cart-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.cart-section .container-fluid .col-4{
+    justify-content: center;
+    align-items: center;
+}
