@@ -48,3 +48,19 @@ Route::get('/detail-transaction', function () {
 Route::get('/search', function () {
     return view('layouts.search');
 })->name('search');
+
+Route::get('/update-profile', function () {
+    return view('layouts.updateProfile');
+})->name('updateprofile');
+
+Route::get('/update-product', function () {
+    return view('layouts.updateProduct');
+})->name('updateproduct');
+
+Route::get('/insert-product', function () {
+    return view('layouts.insertProduct');
+})->name('insertproduct');
+
+Route::get('/manage-user', function () {
+    return view('layouts.manageUser');
+})->name('manageuser');

@@ -149,3 +149,75 @@ footer{
     justify-content: center;
     align-items: center;
 }
+
+/* ----------------------------------- Update profile Page ----------------------------------- */
+.updateprofile-section{
+    margin-top: 50px;
+}
+
+.updateprofile-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.updateprofile-section .container-fluid .col-12{
+    justify-content: center;
+    align-items: center;
+    padding: 0 200px 100px 200px;
+}
+
+.updateprofile-section .container-fluid .col-12 form{
+    padding: 10px 100px 10px 100px;
+}
+
+.updateprofile-section .container-fluid .col-12 form .btn{
+    margin: 0px 0px 0px 90px;
+}
+
+/* ----------------------------------- Update product Page ----------------------------------- */
+.updateproduct-section{
+    margin-top: 50px;
+}
+
+.updateproduct-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.updateproduct-section .container-fluid .col-12{
+    justify-content: center;
+    align-items: center;
+    padding: 0 200px 100px 200px;
+}
+
+.updateproduct-section .container-fluid .col-12 form{
+    padding: 10px 100px 0px 100px;
+}
+
+.updateproduct-section .container-fluid .col-12 .btn{
+    margin: 0px 0px 0px 190px;
+}
+
+/* ----------------------------------- Insert product Page ----------------------------------- */
+.insertproduct-section{
+    margin-top: 50px;
+}
+
+.insertproduct-section .container-fluid{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.insertproduct-section .container-fluid .col-12{
+    justify-content: center;
+    align-items: center;
+    padding: 0 200px 100px 200px;
+}
+
+.insertproduct-section .container-fluid .col-12 form{
+    padding: 10px 100px 0px 100px;
+}
+
+.insertproduct-section .container-fluid .col-12 .btn{
+    margin: 0px 0px 0px 190px;
+}
