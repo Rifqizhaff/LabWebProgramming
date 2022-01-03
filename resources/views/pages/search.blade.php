@@ -1,9 +1,29 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 <div class="home-section">
     <div class="container-fluid">
-        
+        <div class="row">
+            <div class="col-1">
+                <p>Search</p>
+            </div>
+            <div class="col-3">
+                <select id="inputState" class="form-select">
+                    <option selected>Animal</option>
+                    <option>Kambing</option>
+                    <option>Sapi</option>
+                    <option>Domba</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Search..." aria-label="Last name">
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary">
+                    Search
+                </button>
+            </div>
+        </div>
         <div class="row">
             <div class="col-4">
                 <div class="card" style="width: 18rem;">

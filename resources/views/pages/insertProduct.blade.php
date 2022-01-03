@@ -1,13 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
-<div class="updateproduct-section">
+<div class="insertproduct-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card" style="width: auto; height: auto;">
                     <div class="card-header">
-                        Update Product
+                        Insert Product
                     </div>
                     <div class="card-body">
                         <form>
