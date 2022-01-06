@@ -25,68 +25,31 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="{{ route('detail') }}" class="btn btn-primary">Product Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+            @forelse ($items as $item)
+                
+                <div class="col-4">
+                    <div class="card mb-4" style="width: 18rem;">
+                        <img src="{{ Storage::url($item->image) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Product 2</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{ route('detail') }}" class="btn btn-primary">Product Detail</a>
+                            <h5 class="card-title">{{ $item->name }}</h5>
+                            <p class="card-text">{{ $item->description }}</p>
+
+                            @if(Auth::user() && Auth::user()->roles == 'ADMIN')
+                                <a href="{{ route('product.edit', $item->id) }}" class="btn btn-danger mb-3">Update Product</a>
+                            @endif
+
+                            <a href="{{ route('detail', $item->slug) }}" class="btn btn-primary">Product Detail</a>
                         </div>
                     </div>
                 </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="{{ route('detail') }}" class="btn btn-primary">Product Detail</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="{{ route('detail') }}" class="btn btn-primary">Product Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Product 2</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{ route('detail') }}" class="btn btn-primary">Product Detail</a>
-                        </div>
-                    </div>
-                </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="{{ route('detail') }}" class="btn btn-primary">Product Detail</a>
-                    </div>
-                </div>
-            </div>
+            
+            @empty
+                <tr>
+                    <td colspan="7" class="text-center">
+                        Data kosong
+                    </td>
+                </tr>
+            @endforelse
         </div>
     </div>
 </div>

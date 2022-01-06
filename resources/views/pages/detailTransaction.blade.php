@@ -19,30 +19,25 @@
                     </tr>
                 </thead>
                 <tbody>
+                @forelse ($item as $item)   
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Kambing cilik</td>
-                    <td>Sehat dan kuat loh kak, suka makan rumput</td>
-                    <td>3500000</td>
-                    <td>5</td>
-                    <td>12500000</td>
+                        <!-- <th scope="row">1</th> -->
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->description }}</td>
+                        <td>{{ $item->price }}</td>
+                        <td>{{ $item->quantity }}</td>
+                        <td>12500000</td>
                     </tr>
+
+                @empty
                     <tr>
-                    <th scope="row">2</th>
-                    <td>Ayam kokok</td>
-                    <td>Sehat dan kuat loh kak, suka makan rumput</td>
-                    <td>100000</td>
-                    <td>10</td>
-                    <td>12500000</td>
+                        <td colspan="7" class="text-center">
+                            Data kosong
+                        </td>
                     </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Sapi gemoy</td>
-                    <td>Sehat dan kuat loh kak, suka makan rumput</td>
-                    <td>123123</td>
-                    <td>123</td>
-                    <td>12500000</td>
-                    </tr>
+
+                @endforelse
+                    
                 </tbody>
             </table>
         </div>

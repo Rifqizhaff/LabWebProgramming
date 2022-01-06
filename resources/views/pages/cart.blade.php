@@ -19,30 +19,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Kambing cilik</td>
-                    <td>3500000</td>
-                    <td>5</td>
-                    <td>12500000</td>
-                    <td><a href=""><button type="button" class="btn btn-danger">Delete</button></a></td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Ayam kokok</td>
-                    <td>100000</td>
-                    <td>10</td>
-                    <td>12500000</td>
-                    <td><a href=""><button type="button" class="btn btn-danger">Delete</button></a></td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Sapi gemoy</td>
-                    <td>123123</td>
-                    <td>123</td>
-                    <td>12500000</td>
-                    <td><a href=""><button type="button" class="btn btn-danger">Delete</button></a></td>
-                    </tr>
+                    @forelse ($items as $item)
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->price }}</td>
+                        <td>{{ $item->stock }}</td>
+                        <td>{{ $item->subtotal }}</td>
+                        <td><a href=""><button type="button" class="btn btn-danger">Delete</button></a></td>
+                        </tr>
+
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center">
+                                Data kosong
+                            </td>
+                        </tr>
+
+                    @endforelse
+                    
                 </tbody>
             </table>
         </div>

@@ -15,23 +15,24 @@
                     <th scope="col">Detail Transaction</th>
                     </tr>
                 </thead>
-                <tbody>
+                
+                @forelse ($items as $item)
+                    <tbody> 
+                        <tr>
+                        <!-- <th scope="row">1</th> -->
+                        <td>{{ $item->transaction_date }}</td>
+                        <td><a href=""><button type="button" class="btn btn-info">Check Detail</button></a></td>
+                        </tr>
+                    </tbody>
+
+                @empty
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Kambing cilik</td>
-                    <td><a href=""><button type="button" class="btn btn-info">Check Detail</button></a></td>
+                        <td colspan="7" class="text-center">
+                            Data kosong
+                        </td>
                     </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Ayam kokok</td>
-                    <td><a href=""><button type="button" class="btn btn-info">Check Detail</button></a></td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Sapi gemoy</td>
-                    <td><a href=""><button type="button" class="btn btn-info">Check Detail</button></a></td>
-                    </tr>
-                </tbody>
+
+                @endforelse
             </table>
         </div>
     </div>

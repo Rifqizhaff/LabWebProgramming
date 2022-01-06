@@ -75,9 +75,10 @@ use App\Http\Controllers\HomeController;
 Route::get('/', 'HomeController@index')
     ->name('home');
 
-Route::get('/detail', 'DetailController@index')
+Route::get('/detail/{slug}', 'DetailController@index')
     ->name('detail');
 
+    
 Route::get('/login', 'LoginController@index')
     ->name('login');
 
@@ -86,6 +87,8 @@ Route::get('/register', 'RegisterController@index')
 
 Route::get('/cart', 'CartController@index')
     ->name('cart');
+
+Route::post('store','CartController@store')->name('cart_store');
 
 Route::get('/transaction', 'TransactionController@index')
     ->name('transaction');
@@ -99,7 +102,21 @@ Route::get('/search', 'SearchController@index')
 Route::get('/update-profile', 'UpdateProfileController@index')
     ->name('updateprofile');
 
+Route::get('/update-profile', 'UpdateProfileController@update')
+    ->name('updateprofile');
+
+// Route::get('/update-profile', [ 'as' => 'user.edit', 'uses' => 'UpdateProfileController@edit']);
+// Route::get('/update-profile', 'UpdateProfileController@edit')
+    // ->name('updateprofile');
+
+// Route::post('/update-profile', 'UpdateProfileController@update')
+//     ->name('updateprofile');
+// Route::get('update','UpdateProfileController@update')->name('profile_update');
+
 Route::get('/update-product', 'UpdateProductController@index')
+    ->name('updateproduct');
+
+Route::get('/update-product', 'UpdateProductController@update')
     ->name('updateproduct');
 
 Route::get('/insert-product', 'InsertProductController@index')
@@ -108,13 +125,28 @@ Route::get('/insert-product', 'InsertProductController@index')
 Route::get('/manage-user', 'ManageUserController@index')
     ->name('manageuser');
 
+Route::delete('/delete/{items}','ManageUserController@destroy')->name('delete_user');
 
-// Route::prefix('admin')
-//     ->namespace('Admin')
-//     ->group(function() {
+// Route::group(['middleware' => 'admin'],
+
+//     function(){
 //         Route::get('/', 'HomeController@index')
 //             ->name('home');
-//     });
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//         Route::resource('product', 'insertProductController');
+//     }
+// );
+
+
+Route::prefix('admin')
+    ->namespace('Admin')
+    ->middleware(['auth','admin'])
+    ->group(function() {
+        Route::get('/', 'HomeController@index')
+            ->name('home');
+        
+        Route::resource('product', 'ProductController');
+        Route::resource('transaction', 'TransactionController');
+    });
+
+Auth::routes(['verify' => true]);
