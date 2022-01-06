@@ -6,7 +6,7 @@ body{
 footer{
     background-color: #79BEEE;
     display: block;
-    position: sticky;
+    position: relative;
     color: #fff;
     font-weight: 600;
 }

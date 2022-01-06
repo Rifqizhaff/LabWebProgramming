@@ -10,29 +10,31 @@
                         Update Profile
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="{{ route('user.update', $item->id) }}" method="post">
+                            @method('PUT')
+                            @csrf
                             <div class="row mb-3">
-                                <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
+                                <label for="username" class="col-sm-2 col-form-label">Username</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputName3">
+                                <input type="text" class="form-control" id="username" name="username" value="{{ old('username') }}">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                <label for="password" class="col-sm-2 col-form-label">Password</label>
                                 <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3">
+                                <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Confirm Password</label>
+                                <label for="password" class="col-sm-2 col-form-label">Confirm Password</label>
                                 <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3">
+                                <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputGender" class="col-sm-2 form-label">Gender</label>
+                                <label for="gender" class="col-sm-2 form-label">Gender</label>
                                 <div class="col-sm-10">
-                                    <select id="inputGender" class="form-select">
+                                    <select id="gender" class="form-select">
                                         <option selected>Choose...</option>
                                         <option>Male</option>
                                         <option>Female</option>

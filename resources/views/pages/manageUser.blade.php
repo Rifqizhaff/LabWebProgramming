@@ -16,21 +16,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table-secondary">
-                    <th scope="row">1</th>
-                    <td>Kambing cilik</td>
-                    <td><a href=""><button type="button" class="btn btn-primary">Delete</button></a></td>
-                    </tr>
-                    <tr class="table-secondary">
-                    <th scope="row">2</th>
-                    <td>Ayam kokok</td>
-                    <td><a href=""><button type="button" class="btn btn-primary">Delete</button></a></td>
-                    </tr>
-                    <tr class="table-secondary">
-                    <th scope="row">3</th>
-                    <td>Sapi gemoy</td>
-                    <td><a href=""><button type="button" class="btn btn-primary">Delete</button></a></td>
-                    </tr>
+                    @forelse ($items as $item)
+                        <tr class="table-secondary">
+                            <th scope="row">{{ $item->id }}</th>
+                            <td>{{ $item->name }}</td>
+                            <form action="{{ route('delete_user', $item) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <td>
+                                    <button class="btn btn-danger">
+                                        Delete
+                                    </button>
+
+                                </td>
+                            </form>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center">
+                                Data kosong
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
